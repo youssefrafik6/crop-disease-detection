@@ -88,13 +88,6 @@ CI runs linting, formatting and synthetic tests on Python 3.11. The tests cover 
 
 This is an experimental portfolio application. Field lighting, background, camera and plant species can change predictions. Image-level splitting cannot guarantee independence by plant or capture session. A separate group-aware field benchmark would provide stronger evidence of generalization. [Limitations](docs/LIMITATIONS.md).
 
-## Maintainer and academic attribution
-
-**Portfolio maintainer:** Youssef Rafik. The [MIT license](LICENSE) covers the portfolio implementation and its accompanying documentation.
-
-This portfolio rebuild extends a CSC 481 group project from Southern Connecticut State University.
-
-[Project audit](docs/PROJECT_AUDIT.md) · [Publication and licensing](docs/PUBLICATION.md).
 
 ## References
 
