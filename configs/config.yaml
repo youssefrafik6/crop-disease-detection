@@ -1,0 +1,17 @@
+seed: 42
+data_dir: data/raw/PlantVillage
+holdout_fraction: 0.30
+test_share_of_holdout: 0.50
+primary_metric: macro_f1
+image_size: 128
+logistic_c: 1.0
+svm_c: 1.0
+svm_tol: 0.01
+svm_max_iter: 2000
+calibration_folds: 3
+tree_max_depth: null
+nb_var_smoothing: 1.0e-9
+cnn_epochs: 12
+cnn_batch_size: 64
+cnn_patience: 3
+cnn_learning_rate: 0.001

@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crop-disease-detection"
+version = "0.1.0"
+description = "Reproducible binary crop leaf classification with handcrafted features and PyTorch"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "numpy>=1.26,<3",
+  "Pillow>=10.1,<13",
+  "scikit-learn==1.6.1",
+  "scikit-image==0.25.2",
+  "matplotlib>=3.9,<4",
+  "PyYAML>=6,<7",
+  "skops==0.12.0",
+  "threadpoolctl>=3.5,<4",
+  "streamlit>=1.44,<1.50",
+]
+
+[project.optional-dependencies]
+cnn = ["torch==2.7.1", "safetensors>=0.5,<1"]
+transfer = ["torch==2.7.1", "torchvision==0.22.1", "safetensors>=0.5,<1"]
+dev = ["pytest>=8,<10", "ruff>=0.11,<0.18", "black>=25,<27"]
+
+[project.scripts]
+crop-train = "crop_disease.cli:train_main"
+crop-evaluate = "crop_disease.cli:evaluate_main"
+crop-predict = "crop_disease.cli:predict_main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+extend-exclude = ["reports"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.black]
+target-version = ["py311"]
+extend-exclude = "/reports/"

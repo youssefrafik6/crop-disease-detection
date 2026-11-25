@@ -1,0 +1,13 @@
+# Methodology
+
+Each image is decoded with Pillow, converted to RGB and resized to 128 × 128 by bicubic interpolation. The loader skips corrupt and unsupported files before splitting. SHA-256 over original RGB pixels plus dimensions detects identical decoded images even when file metadata differs. The lexicographically first path represents each same-label exact group. All members of conflicting-label groups are excluded. Stable path ordering and a two-stage stratified split yield approximately 70% training, 15% validation and 15% test with seed 42.
+
+HOG uses grayscale, nine orientations, 16 × 16 cells, 2 × 2 cells per block and L2-Hys normalization. The 7 × 7 blocks contribute 36 values each, producing 1,764 values. Three 32-bin RGB histograms add 96 values. All histogram bins share a normalization denominator, matching the academic design. The pure image transform is identical in training and prediction. The optimized integer histogram and float32 representation are tested against the academic calculation.
+
+The majority-class baseline measures how far accuracy alone can go. Logistic Regression and Gaussian Naive Bayes use a training-fitted standardizer. The Decision Tree uses unscaled features because ordering determines splits. Balanced weights apply to Logistic Regression, Decision Tree and LinearSVC. GaussianNB keeps empirical priors. LinearSVC is wrapped in sigmoid calibration using seeded stratified training folds. A separate standardizer is fitted inside every fold.
+
+The custom CNN uses four convolution blocks with batch normalization and ReLU, followed by pooled features, dropout and two logits. Normalized RGB pixels are mapped to [−1, 1]. Training uses horizontal flips, weighted cross-entropy and AdamW. Validation uses deterministic image transforms and evaluation mode. The earliest checkpoint with the highest primary validation metric is retained, and patience limits epochs without improvement. Apple MPS and CUDA are supported when PyTorch reports availability. CPU is the fallback when neither is available. Seeds control shuffling, augmentation and initialization. Exact cross-device determinism is not guaranteed.
+
+Optional ResNet18 initializes from torchvision's ImageNet weights, replaces the classification head and fine-tunes the full model. It uses ImageNet channel statistics and this project's 128 × 128 resize. Both deep models train on the exact same manifest as the traditional models. Scores are ranked on the same primary metric and validation images. The CNN and ResNet18 softmax estimates have no separate calibration step.
+
+The SVM configuration exposes tolerance and iteration limits as a runtime trade-off. The verified run uses a tolerance of 0.01 with a 2,000-iteration cap and three calibration folds.
