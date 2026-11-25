@@ -2,7 +2,7 @@
 
 Classify a leaf image as **Healthy** or **Diseased**. A command-line tool and a Streamlit app load saved models for image predictions.
 
-PlantVillage provides labeled, mostly controlled photographs. The research question is how well each candidate recognizes the two labels on held-out images from that collection. [View healthy and diseased leaf examples in Figure 1 on page 5 of the original report](reports/original_report.pdf#page=5).
+PlantVillage provides labeled, mostly controlled photographs. The research question is how well each candidate recognizes the two labels on held-out images from that collection.
 
 ## Quick start
 
@@ -92,7 +92,9 @@ This is an experimental portfolio application. Field lighting, background, camer
 
 **Portfolio maintainer:** Youssef Rafik. The [MIT license](LICENSE) covers the portfolio implementation and its accompanying documentation.
 
-The project was completed by **Youssef Rafik**
+This portfolio rebuild extends a CSC 481 group project from Southern Connecticut State University.
+
+[Project audit](docs/PROJECT_AUDIT.md) · [Publication and licensing](docs/PUBLICATION.md).
 
 ## References
 

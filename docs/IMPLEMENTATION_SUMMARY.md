@@ -1,6 +1,6 @@
 # Implementation summary
 
-The repository contains the original CSC 481 source, report and poster, plus a Python package with a reproducible PlantVillage pipeline, classical model comparison, a majority baseline, PyTorch CNN and optional ResNet18, prediction CLI, Streamlit UI, Docker and GitHub Actions.
+The portfolio rebuild of the CSC 481 project provides a Python package with a reproducible PlantVillage pipeline, classical model comparison, a majority baseline, PyTorch CNN and optional ResNet18, prediction CLI, Streamlit UI, Docker and GitHub Actions.
 
 [Project audit](PROJECT_AUDIT.md) · [Methodology](METHODOLOGY.md) · [Evaluation](MODEL_EVALUATION.md) · [Quick start](../README.md#quick-start).
 
