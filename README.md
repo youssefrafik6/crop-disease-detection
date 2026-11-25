@@ -1,6 +1,6 @@
 # Predicting Crop Diseases Using Leaf Images
 
-Classify a leaf image as **Healthy** or **Diseased**. This portfolio rebuild of a Southern Connecticut State University machine learning project compares handcrafted texture and color features with a small PyTorch CNN on PlantVillage. A command-line tool and a Streamlit app load saved models for image predictions.
+Classify a leaf image as **Healthy** or **Diseased**. A command-line tool and a Streamlit app load saved models for image predictions.
 
 PlantVillage provides labeled, mostly controlled photographs. The research question is how well each candidate recognizes the two labels on held-out images from that collection. [View healthy and diseased leaf examples in Figure 1 on page 5 of the original report](reports/original_report.pdf#page=5).
 
@@ -92,9 +92,7 @@ This is an experimental portfolio application. Field lighting, background, camer
 
 **Portfolio maintainer:** Youssef Rafik. The [MIT license](LICENSE) covers the portfolio implementation and its accompanying documentation.
 
-The original group project was completed by **Youssef Rafik, Jacob Tanner and Hualin Li** for **CSC 481 – Machine Learning**, Southern Connecticut State University, Spring 2026. Youssef's documented contributions include data acquisition, image preprocessing, HOG and RGB histogram extraction, classifier training and evaluation, results analysis and report writing. The portfolio rebuild adds the reproducible package, baseline, evaluation protocol, CNN, CLI, app and verification.
-
-[Original report](reports/original_report.pdf) · [Original poster](reports/original_poster.pdf) · [Original Colab source](reports/Source_Code_CSC481_Final_Project.py) · [Project audit](docs/PROJECT_AUDIT.md) · [Publication and licensing](docs/PUBLICATION.md).
+The project was completed by **Youssef Rafik**
 
 ## References
 
