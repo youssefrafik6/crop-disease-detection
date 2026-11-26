@@ -1,6 +1,6 @@
 # Implementation summary
 
-The portfolio rebuild of the CSC 481 project provides a Python package with a reproducible PlantVillage pipeline, classical model comparison, a majority baseline, PyTorch CNN and optional ResNet18, prediction CLI, Streamlit UI, Docker and GitHub Actions.
+The Python package includes a PlantVillage training pipeline, a majority baseline, classical classifiers, a PyTorch CNN, and an optional ResNet18. Use the CLI or Streamlit for inference. Docker packages the app, and GitHub Actions runs the checks.
 
 [Project audit](PROJECT_AUDIT.md) · [Methodology](METHODOLOGY.md) · [Evaluation](MODEL_EVALUATION.md) · [Quick start](../README.md#quick-start).
 
@@ -34,9 +34,9 @@ To try the existing local artifacts, install `'.[cnn]'` using pip, then run `str
 - Synthetic training, model persistence, test-set locking, image decoding, CLI failure handling, upload-to-prediction rendering and temporary archive extraction were exercised. The initial calibrated SVM round-trip failed because it stored the internal `StratifiedKFold` type. The narrowly scoped SVM allowlist fixed the failure.
 - The optional ResNet18 used real torchvision ImageNet weights for a one-epoch synthetic smoke test. Full-dataset transfer-learning scores were not measured.
 - Docker built successfully, served Streamlit on localhost and loaded a saved CNN as its non-root user. The native Streamlit server also answered its health endpoint. The default CNN-enabled Docker build was verified. The optional classical-only and transfer image variants remain unverified.
-- The GitHub workflow passed actionlint and its check commands were exercised in the Python 3.11 container. The hosted GitHub Actions run awaits publication. The repository has no prior commits or configured remote. Common credential and machine-path patterns were scanned in candidate source files and in searchable PDF text and metadata without hits.
+- The GitHub workflow passed actionlint and its check commands were exercised in the Python 3.11 container. Common credential and machine-path patterns were scanned in candidate source files and in searchable PDF text and metadata without hits.
 - The native computer-use bridge could not start. Streamlit's AppTest exercised the app controls and valid and invalid uploads in combination with the HTTP startup check.
 
-## Before publishing
+## Redistribution
 
-Publication permission for the original academic materials has been confirmed. The MIT license covers the new portfolio implementation and documentation. Review the files staged in any new Git repository. Exclude local model and dataset directories. [Publication and licensing](PUBLICATION.md).
+Keep local model and dataset directories outside version control. See [licensing and permissions](PUBLICATION.md).
