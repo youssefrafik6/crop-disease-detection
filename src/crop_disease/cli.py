@@ -93,6 +93,6 @@ def predict_main():
         result = predict_image(load_model(args.run_dir, args.model), args.image)
         print(f"Prediction: {result['label']}")
         if result["estimated_probability"] is not None:
-            print(f"Estimated probability: {result['estimated_probability']:.2f}")
+            print(f"Model score for the predicted label: {result['estimated_probability']:.2f}")
     except (OSError, ValueError, ImportError, RuntimeError) as exc:
         parser.exit(2, f"Prediction failed: {exc}\n")
