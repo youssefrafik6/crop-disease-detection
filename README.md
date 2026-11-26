@@ -4,6 +4,8 @@ Classify a leaf image as **Healthy** or **Diseased**. A command-line tool and a 
 
 PlantVillage provides labeled, mostly controlled photographs. The research question is how well each candidate recognizes the two labels on held-out images from that collection.
 
+The app displays a model score for its predicted label. Field conditions and crop varieties can differ substantially from the training images.
+
 ## Quick start
 
 For a fresh checkout, start from the project root with Python 3.11–3.13:
