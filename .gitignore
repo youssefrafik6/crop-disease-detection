@@ -29,6 +29,10 @@ data/processed/*
 !data/processed/.gitkeep
 models/*
 !models/README.md
+!models/demo/
+models/demo/*
+!models/demo/run.json
+!models/demo/cnn.safetensors
 results/figures/*
 !results/figures/.gitkeep
 results/metrics/*

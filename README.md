@@ -10,7 +10,7 @@ The app displays a model score for its predicted label. Field conditions and cro
 
 ## Quick start
 
-For a fresh checkout, start from the project root with Python 3.11–3.13:
+For a fresh checkout, start from the project root with Python 3.11–3.14:
 
 ```bash
 python3 -m venv .venv
@@ -24,7 +24,7 @@ streamlit run app/streamlit_app.py
 
 The dashboard uses a trained model and its run manifest. The training images are needed for training and evaluation.
 
-If the verified CNN artifacts already exist under `models/plantvillage`, install the CNN dependencies with `python -m pip install '.[cnn]'` and start Streamlit directly.
+To serve the bundled CNN, install with `python -m pip install '.[cnn]'`, then run `streamlit run app/streamlit_app.py` from the repository root. The app prefers a local `models/plantvillage` run when available.
 
 Open [the local app](http://localhost:8501). Choose a saved model and upload one leaf photograph. The first training run creates the model files. Later app launches only load them. The download is approximately 672 MiB and the traditional experiment takes several minutes. If the direct download requires sign-in, download the archive from Kaggle and run `python scripts/download_data.py --archive /path/to/plantdisease.zip`. [Dataset setup and provenance](data/README.md).
 

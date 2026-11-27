@@ -7,22 +7,35 @@ name = "crop-disease-detection"
 version = "0.1.0"
 description = "Reproducible binary crop leaf classification with handcrafted features and PyTorch"
 readme = "README.md"
-requires-python = ">=3.11,<3.14"
+requires-python = ">=3.11,<3.15"
 dependencies = [
   "numpy>=1.26,<3",
   "Pillow>=10.1,<13",
-  "scikit-learn==1.6.1",
-  "scikit-image==0.25.2",
+  "scikit-learn==1.6.1; python_version < '3.14'",
+  "scikit-learn==1.8.0; python_version >= '3.14'",
+  "scikit-image==0.25.2; python_version < '3.14'",
+  "scikit-image==0.26.0; python_version >= '3.14'",
   "matplotlib>=3.9,<4",
   "PyYAML>=6,<7",
-  "skops==0.12.0",
+  "skops==0.12.0; python_version < '3.14'",
+  "skops==0.13.0; python_version >= '3.14'",
   "threadpoolctl>=3.5,<4",
   "streamlit>=1.44,<1.50",
 ]
 
 [project.optional-dependencies]
-cnn = ["torch==2.7.1", "safetensors>=0.5,<1"]
-transfer = ["torch==2.7.1", "torchvision==0.22.1", "safetensors>=0.5,<1"]
+cnn = [
+  "torch==2.7.1; python_version < '3.14'",
+  "torch==2.9.1; python_version >= '3.14'",
+  "safetensors>=0.5,<1",
+]
+transfer = [
+  "torch==2.7.1; python_version < '3.14'",
+  "torch==2.9.1; python_version >= '3.14'",
+  "torchvision==0.22.1; python_version < '3.14'",
+  "torchvision==0.24.1; python_version >= '3.14'",
+  "safetensors>=0.5,<1",
+]
 dev = ["pytest>=8,<10", "ruff>=0.11,<0.18", "black>=25,<27"]
 
 [project.scripts]

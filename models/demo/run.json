@@ -1,0 +1,96 @@
+{
+  "schema": 2,
+  "feature_schema": "hog9-16x16-2x2_rgb32-v1",
+  "labels": {
+    "0": "Healthy",
+    "1": "Diseased"
+  },
+  "config": {
+    "seed": 42,
+    "data_dir": "",
+    "holdout_fraction": 0.3,
+    "test_share_of_holdout": 0.5,
+    "primary_metric": "macro_f1",
+    "image_size": 128,
+    "logistic_c": 1.0,
+    "svm_c": 1.0,
+    "svm_tol": 0.01,
+    "svm_max_iter": 2000,
+    "calibration_folds": 3,
+    "tree_max_depth": null,
+    "nb_var_smoothing": 1e-09,
+    "cnn_epochs": 12,
+    "cnn_batch_size": 64,
+    "cnn_patience": 3,
+    "cnn_learning_rate": 0.001
+  },
+  "preprocessing": {
+    "mode": "RGB",
+    "resize": "bicubic",
+    "size": 128,
+    "cnn_normalization": "[-1, 1]",
+    "resnet18_normalization": "ImageNet mean/std"
+  },
+  "versions": {
+    "numpy": "2.5.5",
+    "scipy": "1.18.1",
+    "Pillow": "11.3.0",
+    "scikit-image": "0.25.2",
+    "scikit-learn": "1.6.1",
+    "skops": "0.12.0",
+    "torch": "2.7.1",
+    "torchvision": "0.22.1",
+    "safetensors": "0.8.0"
+  },
+  "python": "3.13.2",
+  "devices": {
+    "cnn": "cpu"
+  },
+  "dataset_audit": {
+    "unsupported": 1,
+    "invalid": 0,
+    "duplicates": 14,
+    "conflicting_groups": 0,
+    "valid_before_dedup": {
+      "1": 17417,
+      "0": 3221
+    },
+    "cross_split_equal_dhash_buckets": 2,
+    "images_in_those_buckets": 4,
+    "example_hashes": [
+      "0e0e1f3723230303",
+      "df1f3f73777f3f8f"
+    ]
+  },
+  "partition_distribution": {
+    "train": {
+      "Healthy": 2250,
+      "Diseased": 12186
+    },
+    "validation": {
+      "Diseased": 2612,
+      "Healthy": 482
+    },
+    "test": {
+      "Diseased": 2611,
+      "Healthy": 483
+    }
+  },
+  "split_sha256": "97b122164ec859b8f1bee5452e799ed296a464f86f22a2bcfc593e68ba618fa5",
+  "models": {
+    "cnn": {
+      "kind": "torch",
+      "sha256": "fc46ff12df5e97b7d4040dbca45654749235b70cd8bd9994717d2c741d940fa4"
+    }
+  },
+  "selected_model": "cnn",
+  "validation_summary": {
+    "cnn": {
+      "accuracy": 0.9919198448610214,
+      "weighted_f1": 0.9918675542587445,
+      "macro_f1": 0.9844422887354326,
+      "roc_auc": 0.9990166674080052,
+      "average_precision": 0.9998122936334287
+    }
+  }
+}
