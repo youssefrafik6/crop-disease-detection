@@ -6,7 +6,7 @@ PlantVillage provides labeled, mostly controlled photographs. The research quest
 
 The app displays a model score for its predicted label. Field conditions and crop varieties can differ substantially from the training images.
 
-[Source code](https://github.com/youssefrafik6/crop-disease-detection) · [Methodology](docs/METHODOLOGY.md) · [Evaluation](docs/MODEL_EVALUATION.md)
+[Source code](https://github.com/youssefrafik6/crop-disease-detection) · [Methodology](docs/METHODOLOGY.md) · [Evaluation](docs/MODEL_EVALUATION.md) · [Training data](data/README.md)
 
 ## Quick start
 
@@ -21,6 +21,8 @@ python scripts/train_models.py --run plantvillage
 python scripts/evaluate_models.py --run plantvillage
 streamlit run app/streamlit_app.py
 ```
+
+The dashboard uses a trained model and its run manifest. The training images are needed for training and evaluation.
 
 If the verified CNN artifacts already exist under `models/plantvillage`, install the CNN dependencies with `python -m pip install '.[cnn]'` and start Streamlit directly.
 
