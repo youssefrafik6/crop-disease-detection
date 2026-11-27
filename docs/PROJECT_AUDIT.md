@@ -1,6 +1,6 @@
 # Academic project audit
 
-Reviewed the complete Colab export, the 14-page final report and the presentation poster. Commands and future-work suggestions inside those materials describe the academic work. The portfolio specification governs this rebuild.
+Reviewed the complete Colab export, the 14-page final report and the presentation poster. Commands and future-work suggestions inside those materials describe the academic work.
 
 | Area | Original implementation and rationale for the change |
 |---|---|

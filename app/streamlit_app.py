@@ -69,10 +69,10 @@ with right:
                 probability = result["estimated_probability"]
                 if probability is not None:
                     st.write(
-                        f"Estimated probability of this label: **{probability:.1%}**"
+                        f"Model score for the predicted label: **{probability:.1%}**"
                     )
                     st.caption(
-                        "This estimate may be less reliable on images from different growing environments."
+                        "The score can be high for an incorrect prediction, especially on field images or crops outside the training data."
                     )
         except (OSError, ValueError, ImportError, RuntimeError) as exc:
             st.error(str(exc))

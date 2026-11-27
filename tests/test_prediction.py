@@ -60,7 +60,7 @@ def test_streamlit_uploaded_image(valid, trained_run, synthetic_data, monkeypatc
         assert not app.exception
         assert app.metric[0].value == "Healthy"
         assert any(
-            "Estimated probability of this label" in line.value for line in app.markdown
+            "Model score for the predicted label" in line.value for line in app.markdown
         )
     else:
         assert "Cannot decode image" in app.error[0].value

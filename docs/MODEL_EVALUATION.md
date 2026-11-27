@@ -61,3 +61,9 @@ A false positive labels a healthy image as diseased. This can cause unnecessary 
 The archive is dominated by diseased images. Report healthy recall alongside disease recall to detect poor minority-class performance. Natural damage and lighting variations can resemble disease, while subtle or small lesions can disappear at 128 × 128. The images and confusion matrix illustrate mistakes. Cause cannot be established from the image alone.
 
 The generated montage includes healthy leaves with strong shadows or folds and diseased leaves with relatively small, localized spots. One sampled false negative received an estimated disease probability of 0.01, and one sampled false positive received 0.94. These examples illustrate why high estimated probabilities still require caution. The error montage and per-image records are available in the local run directory.
+
+## Saved CNN verification
+
+Rescoring the saved CNN on the pinned PlantVillage test partition reproduced 99.13% accuracy and 0.9832 macro F1 across 3,094 images. The confusion matrix, ordered Healthy then Diseased, was `[[462, 21], [6, 2605]]`. Healthy-class precision and recall were 0.9872 and 0.9565. Diseased-class precision and recall were 0.9920 and 0.9977.
+
+The authors’ [Cropped PlantDoc dataset](https://github.com/pratikkayal/PlantDoc-Dataset) is a candidate external benchmark. A separate run should map its labels to the same binary task, restrict comparisons to overlapping crops, and check for overlap with PlantVillage before scoring. The PlantVillage metrics above describe the held-out partition of the original image collection.

@@ -1,8 +1,10 @@
-# Predicting Crop Diseases Using Leaf Images
+# Crop Disease Detection
 
 Classify a leaf image as **Healthy** or **Diseased**. A command-line tool and a Streamlit app load saved models for image predictions.
 
 PlantVillage provides labeled, mostly controlled photographs. The research question is how well each candidate recognizes the two labels on held-out images from that collection.
+
+The app displays a model score for its predicted label. Field conditions and crop varieties can differ substantially from the training images.
 
 ## Quick start
 
@@ -49,7 +51,7 @@ The scikit-learn models use 1,764 HOG values and 96 RGB histogram values from ea
 
 The named Kaggle archive has 20,639 top-level files in 15 tomato, potato and bell pepper folders. The loader validates and deduplicates decoded images before the seeded 70/15/15 split. The academic report describes 38 class folders. [Dataset details](data/README.md).
 
-The Custom CNN led the full PlantVillage validation comparison with **0.9844 macro F1**. On **3,094 held-out images** it achieved **99.13% accuracy**, **0.9832 macro F1** and **0.9988 ROC-AUC**. The majority baseline reached **84.42% validation accuracy** and **0.4578 validation macro F1**. These are image-level results from the rebuilt pipeline. [Full comparison, per-class metrics and historical results](docs/MODEL_EVALUATION.md).
+The Custom CNN led the full PlantVillage validation comparison with **0.9844 macro F1**. On **3,094 held-out images** it achieved **99.13% accuracy**, **0.9832 macro F1** and **0.9988 ROC-AUC**. The majority baseline reached **84.42% validation accuracy** and **0.4578 validation macro F1**. These are image-level results. [Full comparison, per-class metrics and historical results](docs/MODEL_EVALUATION.md).
 
 ![Validation ROC and precision–recall curves for the six candidates](docs/assets/validation_curves.svg)
 
@@ -86,8 +88,11 @@ CI runs linting, formatting and synthetic tests on Python 3.11. The tests cover 
 
 ## Limitations and next steps
 
-This is an experimental portfolio application. Field lighting, background, camera and plant species can change predictions. Image-level splitting cannot guarantee independence by plant or capture session. A separate group-aware field benchmark would provide stronger evidence of generalization. [Limitations](docs/LIMITATIONS.md).
+Field lighting, background, camera and plant species can change predictions. Image-level splitting cannot guarantee independence by plant or capture session. A separate group-aware field benchmark would provide stronger evidence of generalization. [Limitations](docs/LIMITATIONS.md).
 
+## License and research
+
+The [MIT license](LICENSE) covers the implementation and documentation. The [project audit](docs/PROJECT_AUDIT.md) documents the CSC 481 group research at Southern Connecticut State University. [Dataset and third-party rights](docs/PUBLICATION.md).
 
 ## References
 
