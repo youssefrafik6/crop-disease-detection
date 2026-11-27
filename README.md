@@ -6,6 +6,8 @@ PlantVillage provides labeled, mostly controlled photographs. The research quest
 
 The app displays a model score for its predicted label. Field conditions and crop varieties can differ substantially from the training images.
 
+[Source code](https://github.com/youssefrafik6/crop-disease-detection) · [Methodology](docs/METHODOLOGY.md) · [Evaluation](docs/MODEL_EVALUATION.md)
+
 ## Quick start
 
 For a fresh checkout, start from the project root with Python 3.11–3.13:
@@ -84,7 +86,7 @@ black --check .
 pytest -q
 ```
 
-CI runs linting, formatting and synthetic tests on Python 3.11. The tests cover image handling, feature parity, training, saved predictions, evaluation and Streamlit integration. [Verification record](docs/IMPLEMENTATION_SUMMARY.md).
+CI runs linting, formatting and synthetic tests on Python 3.11. The tests cover image handling, feature parity, training, saved predictions, evaluation and Streamlit integration. [Benchmark reproduction](docs/MODEL_EVALUATION.md#reproduce-the-benchmark).
 
 ## Limitations and next steps
 
@@ -100,3 +102,7 @@ The [MIT license](LICENSE) covers the implementation and documentation. The [pro
 - Mohanty, Hughes and Salathé, *Using Deep Learning for Image-Based Plant Disease Detection*. [Frontiers in Plant Science](https://doi.org/10.3389/fpls.2016.01419).
 - Dalal and Triggs, *Histograms of Oriented Gradients for Human Detection*. [CVPR](https://doi.org/10.1109/CVPR.2005.177).
 - [PlantVillage archive used for this project](https://www.kaggle.com/datasets/emmarex/plantdisease) · [scikit-learn](https://scikit-learn.org/) · [PyTorch](https://pytorch.org/) · [Streamlit](https://streamlit.io/).
+
+## Author
+
+Youssef Rafik

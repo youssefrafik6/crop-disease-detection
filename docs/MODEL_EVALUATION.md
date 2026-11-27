@@ -67,3 +67,22 @@ The generated montage includes healthy leaves with strong shadows or folds and d
 Rescoring the saved CNN on the pinned PlantVillage test partition reproduced 99.13% accuracy and 0.9832 macro F1 across 3,094 images. The confusion matrix, ordered Healthy then Diseased, was `[[462, 21], [6, 2605]]`. Healthy-class precision and recall were 0.9872 and 0.9565. Diseased-class precision and recall were 0.9920 and 0.9977.
 
 The authors’ [Cropped PlantDoc dataset](https://github.com/pratikkayal/PlantDoc-Dataset) is a candidate external benchmark. A separate run should map its labels to the same binary task, restrict comparisons to overlapping crops, and check for overlap with PlantVillage before scoring. The PlantVillage metrics above describe the held-out partition of the original image collection.
+
+## Reproduce the benchmark
+
+From the project root in a clean environment:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-dev.txt
+python scripts/download_data.py
+python scripts/train_models.py --run plantvillage-reproduction --deep cnn --device cpu
+python scripts/evaluate_models.py --run plantvillage-reproduction
+CROP_MODEL_RUN=models/plantvillage-reproduction streamlit run app/streamlit_app.py
+```
+
+To try the existing local artifacts, install `'.[cnn]'` using pip, then run `streamlit run app/streamlit_app.py` or `python scripts/predict_image.py --run-dir models/plantvillage --image /path/to/leaf.jpg`.
+
+
+The calibrated SVM rerun used a configurable solver tolerance to bound runtime. Classical fitting and CNN fitting ran in separate worker invocations with the same verified partition manifest. Optional ResNet18 weights were exercised in a synthetic one-epoch smoke test. Its full-dataset performance remains unmeasured.
