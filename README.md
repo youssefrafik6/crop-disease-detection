@@ -6,7 +6,7 @@ PlantVillage provides labeled, mostly controlled photographs. The research quest
 
 The app displays a model score for its predicted label. Field conditions and crop varieties can differ substantially from the training images.
 
-[Source code](https://github.com/youssefrafik6/crop-disease-detection) · [Methodology](docs/METHODOLOGY.md) · [Evaluation](docs/MODEL_EVALUATION.md) · [Training data](data/README.md)
+[Live demo](https://crop-disease-detection-njfhcdf7tjnflntae9ywjn.streamlit.app/) · [Source code](https://github.com/youssefrafik6/crop-disease-detection) · [Methodology](docs/METHODOLOGY.md) · [Evaluation](docs/MODEL_EVALUATION.md) · [Training data](data/README.md)
 
 ## Quick start
 
