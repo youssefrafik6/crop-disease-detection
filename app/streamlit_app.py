@@ -18,7 +18,9 @@ st.caption(
     "Experimental predictions may not generalize to field images. The models do not identify specific diseases or validate plant health."
 )
 
-run_dir = Path(os.getenv("CROP_MODEL_RUN", "models/plantvillage"))
+local_run = Path("models/plantvillage")
+default_run = local_run if (local_run / "run.json").is_file() else Path("models/demo")
+run_dir = Path(os.getenv("CROP_MODEL_RUN", str(default_run)))
 
 
 @st.cache_resource(show_spinner=False)

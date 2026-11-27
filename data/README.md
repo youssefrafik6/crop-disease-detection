@@ -6,10 +6,11 @@ Use the academic [PlantVillage archive by emmarex](https://www.kaggle.com/datase
 python scripts/download_data.py
 ```
 
-If Kaggle requires browser sign-in, download the ZIP from the dataset page and pass the archive location locally.
+To download with the Kaggle CLI, run the following commands from the repository root. In a notebook, prefix the Kaggle command with an exclamation mark.
 
 ```bash
-python scripts/download_data.py --archive /path/to/plantdisease.zip
+kaggle datasets download -d emmarex/plantdisease
+python scripts/download_data.py --archive plantdisease.zip
 ```
 
 The downloader extracts only the top-level `PlantVillage/<class>/<image>` tree. It rejects archive traversal and symlink entries in that tree, enforces an archive size limit and refuses to overwrite an existing destination. The current ZIP also contains a nested mirror. Extracting both trees would duplicate the cohort. The downloaded ZIP was about 672 MiB compressed. Allow approximately 1.1 GiB for the archive, chosen extracted tree and experiment outputs.

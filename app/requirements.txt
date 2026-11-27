@@ -1,0 +1,3 @@
+.[cnn]
+torch @ https://download-r2.pytorch.org/whl/cpu/torch-2.9.1%2Bcpu-cp314-cp314-manylinux_2_28_x86_64.whl#sha256=88adf5157db5da1d54b1c9fe4a6c1d20ceef00e75d854e206a87dbf69e3037dc ; python_version == "3.14" and sys_platform == "linux" and platform_machine == "x86_64"
+torch @ https://download-r2.pytorch.org/whl/cpu/torch-2.9.1%2Bcpu-cp314-cp314-manylinux_2_28_aarch64.whl#sha256=65010ab4aacce6c9a1ddfc935f986c003ca8638ded04348fd326c3e74346237c ; python_version == "3.14" and sys_platform == "linux" and platform_machine == "aarch64"
